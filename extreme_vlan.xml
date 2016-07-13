@@ -1,0 +1,53 @@
+<interface>
+    <name>Extreme Vlan Traffic Statistics</name>
+    <description>Shows a list of ifIndex, VLAN ID, VLAN Name, VLAN Description and IP as table for graphing of per VLAN traffic</description>
+    <script_path>|path_cacti|/scripts/extreme_vlan.py</script_path>
+    <arg_prepend>|host_hostname| |host_snmp_community|</arg_prepend>
+    <arg_index>index</arg_index>
+    <arg_query>query</arg_query>
+    <arg_get>get</arg_get>
+    <arg_num_indexes>num_indexes</arg_num_indexes>
+    <output_delimeter>!</output_delimeter>
+    <index_order>ifName</index_order>
+    <index_order_type>alphabetic</index_order_type>
+    <index_title_format>|chosen_order_field|</index_title_format>
+
+    <fields>
+        <ifIndex>
+            <name>VLAN ifIndex</name>
+            <direction>input</direction>
+            <query_name>ifIndex</query_name>
+        </ifIndex>
+        <vlanTag>
+            <name>VLAN ID</name>
+            <direction>input</direction>
+            <query_name>vlanTag</query_name>
+        </vlanTag>
+        <ifName>
+            <name>VLAN Name</name>
+            <direction>input</direction>
+            <query_name>ifName</query_name>
+        </ifName>
+        <ifAlias>
+            <name>VLAN Description</name>
+            <direction>input</direction>
+            <query_name>ifAlias</query_name>
+        </ifAlias>
+        <ipAddress>
+            <name>VLAN IP</name>
+            <direction>input</direction>
+            <query_name>ipAddress</query_name>
+        </ipAddress>
+
+        <ifInOctets>
+            <name>Received Bytes</name>
+            <direction>output</direction>
+            <query_name>receive</query_name>
+        </ifInOctets>
+        <ifOutOctets>
+            <name>Transmitted Bytes</name>
+            <direction>output</direction>
+            <query_name>transmit</query_name>
+        </ifOutOctets>
+    </fields>
+</interface>
